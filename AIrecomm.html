@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INTERN MIND</title>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-menu ">
+      <div class="col-sm-1"></div>
+<div class="col-sm-11 ">
+<nav class="navbar navbar-expand-lg bg-transparent w-100 sticky-top px-0">
+  <div class="container-fluid bg-transparent">
+   <a href="#" class="logo text-white">
+      <img src="assets/logo.png" alt="Internship Icon" class="logo-img">
+      <h2 class="text white fs-2">InternMind</h2>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav me-5 mb-2 mb-lg-0 rounded mx-5 shadow-lg ">
+        <li class="nav-item  mx-2  me-3">
+          <a class="nav-link text-white  fw-bold" href="index.html"> <i class="bi bi-house-door text-white"></i> Home</i></a>
+        </li>
+      
+         <li class="nav-item  mx-2">
+          <a class="nav-link text-white  fw-bold" href="Internshiplist.html"><i class="bi bi-mortarboard text-white"></i> Internships</a>
+        </li>
+          <li class="nav-item  mx-2">
+          <a class="nav-link text-white  fw-bold" href="Dashboard.html"><i class="bi bi-layout-text-sidebar text-white"></i> Dashboard</a>
+        </li>
+        <li class="nav-item  mx-2">
+          <a class="nav-link text-white  fw-bold" href="AIresumebuilder.html"><i class="bi bi-info-circle text-white"></i>AI Resume builder</a>
+        </li>
+          
+      <form class="d-flex fs-4" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search internships" id="searchBox">
+        <button class="btn btn-light" type="submit">Search</button>
+      </form>
+      <div></div>
+       <li class="nav-item  mx-2 ps-3">
+          <a class="nav-link text-white fs-5 fw-bold ps-5" href="#"> <i class="bi bi-box-arrow-in-right text-white"></i> Logout</a>
+        </li>      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+</div>
+<header>
+    <h1>InternMind AI Recommendations</h1>
+    <button id="getRecommendations" style="background: linear-gradient(135deg, #224568 0%, #153C66 50%, #071e3a 100%);
+          color: white; 
+          border: none;">Get AI Recommendation</button>
+  </header>
+
+  <!-- Recommendations Section -->
+  <section id="recommendationsSection" class="hidden">
+    <h2>Top 5 Internship Recommendations</h2>
+    <div id="internshipList" class="internship-container"></div>
+    
+    <!-- Explore More Button -->
+    <div class="explore-more">
+      <button id="exploreBtn">Explore More (₹29)</button>
+      <p id="paymentStatus" class="hidden">✅ Payment Successful! Unlocking more internships...</p>
+    </div>
+  </section>
+</div>
+</div>
+
+
+  <script src="recommJS.js"></script>
+</body>
+</html>

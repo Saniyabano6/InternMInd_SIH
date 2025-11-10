@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="checkerboard-grid">
+   <!-- Navigation -->
+   <div class="row-menu ">
+      <div class="col-sm-1"></div>
+<div class="col-sm-11 ">
+<nav class="navbar navbar-expand-lg bg-transparent w-100 sticky-top px-0">
+  <div class="container-fluid bg-transparent">
+   <a href="#" class="logo text-white">
+      <img src="assets/logo.png" alt="Internship Icon" class="logo-img">
+      <h2 class="text white fs-2">InternMind</h2>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav me-5 mb-2 mb-lg-0 rounded mx-5 shadow-lg ">
+        <li class="nav-item  mx-2  me-3">
+          <a class="nav-link text-white fs-5 fw-bold" href="index.html"> <i class="bi bi-house-door text-white"></i> Home</i></a>
+        </li>
+      
+         <li class="nav-item  mx-2">
+          <a class="nav-link text-white fs-5 fw-bold" href="Internshiplist.html"><i class="bi bi-mortarboard text-white"></i> Internships</a>
+        </li>
+          <li class="nav-item  mx-2">
+          <a class="nav-link text-white fs-5 fw-bold" href="Dashboard.html"><i class="bi bi-layout-text-sidebar text-white"></i> Dashboard</a>
+        </li>
+        <li class="nav-item  mx-2">
+          <a class="nav-link text-white fs-5 fw-bold" href="#"><i class="bi bi-info-circle text-white"></i> About</a>
+        </li>
+      
+
+      <form class="d-flex fs-4" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search internships" id="searchBox">
+        <button class="btn btn-light" type="submit">Search</button>
+      </form>
+      <div></div>
+       <li class="nav-item  mx-2 ps-3">
+          <a class="nav-link text-white fs-5 fw-bold ps-5" href="#"> <i class="bi bi-box-arrow-in-right text-white"></i> Login</a>
+        </li>      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+</div>
+<div class="">
+  <div class="col-sm-6">
+   <!-- Main Content -->
+   <div class="container my-5 " >
+      <div class="main-container">
+         <div class="row resume-row">
+            <!-- Resume Builder Form -->
+            <div class="col-12">
+               <div class="p-4 p-md-5">
+                  <!-- Header -->
+                  <div class="text-center mb-5">
+                     <h1 class="display-4 fw-bold text-white">AI Resume Builder</h1>
+                     <p class="lead fw-bold text-white">Create a professional resume </p>
+                  </div>
+
+                 
+                  <!-- Personal Information -->
+                  <div class="section-card">
+                     <div class="section-header">
+                        <h3 class="h4 mb-0 text-dark"><i class="bi bi-person me-2"></i>Personal Information</h3>
+                     </div>
+                     <div class="card-body p-4">
+                        <div class="row g-3">
+                           <div class="col-md-6">
+                              <label for="fullName" class="form-label">Full Name *</label>
+                              <input type="text" class="form-control" id="fullName" placeholder="Saniya Bano" required>
+                           </div>
+                           <div class="col-md-6">
+                              <label for="jobTitle" class="form-label">Job Title *</label>
+                              <input type="text" class="form-control" id="jobTitle" placeholder="Web Developer" required>
+                           </div>
+                           <div class="col-12">
+                              <label for="email" class="form-label">Email *</label>
+                              <input type="email" class="form-control" id="email" placeholder="saniya@example.com" required>
+                           </div>
+                           <div class="col-md-6">
+                              <label for="phone" class="form-label">Phone</label>
+                              <input type="tel" class="form-control" id="phone" placeholder="+91 9856391015">
+                           </div>
+                           <div class="col-md-6">
+                              <label for="location" class="form-label">Location</label>
+                              <input type="text" class="form-control" id="location" placeholder="Gonda ,IN ">
+                           </div>
+                           <div class="col-12">
+                              <label for="summary" class="form-label">Professional Summary</label>
+                              <textarea class="form-control" id="summary" rows="3" placeholder="Brief overview of your professional background, skills, and achievements..."></textarea>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Experience -->
+                  <div class="section-card">
+                     <div class="section-header d-flex justify-content-between align-items-center">
+                        <h3 class="h4 mb-0 text-dark"><i class="bi bi-briefcase me-2"></i>Work Experience</h3>
+                        <button type="button" class="btn btn-primary btn-sm" id="addExperience">
+                           <i class="bi bi-plus-circle me-1"></i>Add Experience
+                        </button>
+                     </div>
+                     <div class="card-body p-4">
+                        <div id="experienceContainer">
+                           <!-- Experience items will be added here dynamically -->
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Education -->
+                  <div class="section-card"> 
+                     <div class="section-header d-flex justify-content-between align-items-center">
+                        <h3 class="h4 mb-0 text-dark"><i class="bi bi-mortarboard me-2"></i>Qualifications</h3>
+                        <button type="button" class="btn btn-primary btn-sm" id="addQualification">
+                           <i class="bi bi-plus-circle me-1"></i>Add Qualification
+                        </button>
+                     </div>
+                     <div class="card-body p-4">
+                        <div id="QualificationContainer">
+                           <!-- Education items will be added here dynamically -->
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Skills -->
+                  <div class="section-card">
+                     <div class="section-header">
+                        <h3 class="h4 mb-0 text-dark"><i class="bi bi-tools me-2"></i>Skills</h3>
+                     </div>
+                     <div class="card-body p-4">
+                        <div class="mb-3">
+                           <label for="skillsInput" class="form-label">Add Skills (press Enter or comma after each skill)</label>
+                           <input type="text" class="form-control" id="skillsInput" placeholder="JavaScript, HTML, CSS, React, Node.js">
+                        </div>
+                        <div id="skillsContainer" class="d-flex flex-wrap gap-2"></div>
+                     </div>
+                  </div>
+               <!-- Sector Interest -->
+
+ <!-- Sector Interest -->
+<div class="section-card">
+    <div class="section-header">
+        <h3 class="h4 mb-0 text-dark"><i class="bi bi-bullseye me-2"></i>Sector Interests</h3>
+    </div>
+    <div class="card-body p-4">
+        <div class="mb-3">
+            <label class="form-label">Select your areas of interest</label>
+            <div class="row g-3" id="sectorInterests">
+                <!-- Technology -->
+                <div class="col-md-3 col-6">
+                    <div class="form-check sector-checkbox">
+                        <input class="form-check-input" type="checkbox" id="sector-technology" data-sector="technology">
+                        <label class="form-check-label sector-label" for="sector-technology">
+                            <div class="sector-icon">
+                                <i class="bi bi-laptop"></i>
+                            </div>
+                            <span>Technology</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Finance -->
+                <div class="col-md-3 col-6">
+                    <div class="form-check sector-checkbox">
+                        <input class="form-check-input" type="checkbox" id="sector-finance" data-sector="finance">
+                        <label class="form-check-label sector-label" for="sector-finance">
+                            <div class="sector-icon">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <span>Finance</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Healthcare -->
+                <div class="col-md-3 col-6">
+                    <div class="form-check sector-checkbox">
+                        <input class="form-check-input" type="checkbox" id="sector-healthcare" data-sector="healthcare">
+                        <label class="form-check-label sector-label" for="sector-healthcare">
+                            <div class="sector-icon">
+                                <i class="bi bi-heart-pulse"></i>
+                            </div>
+                            <span>Healthcare</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Education -->
+                <div class="col-md-3 col-6">
+                    <div class="form-check sector-checkbox">
+                        <input class="form-check-input" type="checkbox" id="sector-education" data-sector="education">
+                        <label class="form-check-label sector-label" for="sector-education">
+                            <div class="sector-icon">
+                                <i class="bi bi-book"></i>
+                            </div>
+                            <span>Education</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Marketing -->
+                <div class="col-md-3 col-6">
+                    <div class="form-check sector-checkbox">
+                        <input class="form-check-input" type="checkbox" id="sector-marketing" data-sector="marketing">
+                        <label class="form-check-label sector-label" for="sector-marketing">
+                            <div class="sector-icon">
+                                <i class="bi bi-megaphone"></i>
+                            </div>
+                            <span>Marketing</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Engineering -->
+                <div class="col-md-3 col-6">
+                    <div class="form-check sector-checkbox">
+                        <input class="form-check-input" type="checkbox" id="sector-engineering" data-sector="engineering">
+                        <label class="form-check-label sector-label" for="sector-engineering">
+                            <div class="sector-icon">
+                                <i class="bi bi-gear"></i>
+                            </div>
+                            <span>Engineering</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Design -->
+                <div class="col-md-3 col-6">
+                    <div class="form-check sector-checkbox">
+                        <input class="form-check-input" type="checkbox" id="sector-design" data-sector="design">
+                        <label class="form-check-label sector-label" for="sector-design">
+                            <div class="sector-icon">
+                                <i class="bi bi-palette"></i>
+                            </div>
+                            <span>Design</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Business -->
+                <div class="col-md-3 col-6">
+                    <div class="form-check sector-checkbox">
+                        <input class="form-check-input" type="checkbox" id="sector-business" data-sector="business">
+                        <label class="form-check-label sector-label" for="sector-business">
+                            <div class="sector-icon">
+                                <i class="bi bi-briefcase"></i>
+                            </div>
+                            <span>Business</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Custom Sector Input -->
+        <div class="mt-4">
+            <label for="customSector" class="form-label">Add Custom Sector</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="customSector" placeholder="Enter your sector of interest">
+                <button class="btn btn-primary" type="button" id="addCustomSector">
+                    <i class="bi bi-plus-circle"></i> Add
+                </button>
+            </div>
+        </div>
+        
+        <!-- Selected Sectors Display -->
+        <div class="mt-4">
+            <label class="form-label">Your Selected Sectors</label>
+            <div id="selectedSectors" class="d-flex flex-wrap gap-2">
+                <!-- Selected sectors will appear here -->
+            </div>
+        </div>
+    </div>
+</div>
+                  <!-- Action Buttons -->
+                  <div class="action-buttons text-center">
+                     <button type="button" class="btn btn-outline-secondary btn-lg me-3" id="resetBtn">
+                        <i class="bi bi-arrow-clockwise me-2"></i>Reset Form
+                     </button>
+                     <button type="button" class="btn btn-primary btn-lg" id="generateBtn">
+                        <i class="bi bi-file-earmark-pdf me-2"></i>Generate Resume PDF
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <div class="col-sm-6" ></div>
+</div>
+   
+   <!-- Custom JS -->
+   <script src="ResumeJS.js"></script>
+</body>
+</html>
+
